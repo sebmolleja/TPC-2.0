@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TPC - Python</title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://use.fontawesome.com/3a2eaf6206.js"></script>
+    <script src="script.js"></script>
+    <link rel="icon" href="/images/tpc-icon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h2>Triglyceride Property Calculator</h2>
+      <div class="row">
+        <div class="col-sm-4">
+          <form class="well">
+            <span class="help-block"
+              >A melting property generator for pure triacylglycerides. To
+              contribute experimental data, please contact one of the
+              contributors.</span
+            >
+
+            <style>
+              /* Custom styles for the dropdown menu */
+            </style>
+
+            <!-- first fatty acid input -->
+
+            <div class="form-group shiny-input-container">
+              <label class="control-label" for="comp1">sn1</label>
+              <div>
+                <select id="comp1">
+                  <option value="" selected disabled>Select an option</option>
+                  <option value="Arachidic">Arachidic (A)</option>
+                  <option value="Arachidonic">Arachidonic (H)</option>
+                  <option value="Behinic">Behinic (B)</option>
+                  <option value="Butyric">Butyric (U)</option>
+                  <option value="Capric">Capric (C)</option>
+                  <option value="Caproic">Caproic (K)</option>
+                  <option value="Caprylic">Caprylic (R)</option>
+                  <option value="Ceric">Ceric (F)</option>
+                  <option value="Elaidic">Elaidic (D)</option>
+                  <option value="Erucic">Erucic (E)</option>
+                  <option value="Lauric">Lauric (L)</option>
+                  <option value="Lignoceric">Lignoceric (G)</option>
+                  <option value="Linoleic">Linoleic (J)</option>
+                  <option value="Linolenic">Linolenic (N)</option>
+                  <option value="Myristic">Myristic (M)</option>
+                  <option value="Oleic">Oleic (O)</option>
+                  <option value="Palmitic">Palmitic (P)</option>
+                  <option value="Palmitoleic">Palmitoleic (T)</option>
+                  <option value="Stearic">Stearic (S)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- second fatty acid input -->
+
+            <div class="form-group shiny-input-container">
+              <label class="control-label" for="comp2">sn2</label>
+              <div>
+                <select id="comp2">
+                  <option value="" selected disabled>Select an option</option>
+                  <option value="Arachidic">Arachidic (A)</option>
+                  <option value="Arachidonic">Arachidonic (H)</option>
+                  <option value="Behinic">Behinic (B)</option>
+                  <option value="Butyric">Butyric (U)</option>
+                  <option value="Capric">Capric (C)</option>
+                  <option value="Caproic">Caproic (K)</option>
+                  <option value="Caprylic">Caprylic (R)</option>
+                  <option value="Ceric">Ceric (F)</option>
+                  <option value="Elaidic">Elaidic (D)</option>
+                  <option value="Erucic">Erucic (E)</option>
+                  <option value="Lauric">Lauric (L)</option>
+                  <option value="Lignoceric">Lignoceric (G)</option>
+                  <option value="Linoleic">Linoleic (J)</option>
+                  <option value="Linolenic">Linolenic (N)</option>
+                  <option value="Myristic">Myristic (M)</option>
+                  <option value="Oleic">Oleic (O)</option>
+                  <option value="Palmitic">Palmitic (P)</option>
+                  <option value="Palmitoleic">Palmitoleic (T)</option>
+                  <option value="Stearic">Stearic (S)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- third fatty acid input -->
+
+            <div class="form-group shiny-input-container">
+              <label class="control-label" for="comp3">sn3</label>
+              <div>
+                <select id="comp3">
+                  <option value="" selected disabled>Select an option</option>
+                  <option value="Arachidic">Arachidic (A)</option>
+                  <option value="Arachidonic">Arachidonic (H)</option>
+                  <option value="Behinic">Behinic (B)</option>
+                  <option value="Butyric">Butyric (U)</option>
+                  <option value="Capric">Capric (C)</option>
+                  <option value="Caproic">Caproic (K)</option>
+                  <option value="Caprylic">Caprylic (R)</option>
+                  <option value="Ceric">Ceric (F)</option>
+                  <option value="Elaidic">Elaidic (D)</option>
+                  <option value="Erucic">Erucic (E)</option>
+                  <option value="Lauric">Lauric (L)</option>
+                  <option value="Lignoceric">Lignoceric (G)</option>
+                  <option value="Linoleic">Linoleic (J)</option>
+                  <option value="Linolenic">Linolenic (N)</option>
+                  <option value="Myristic">Myristic (M)</option>
+                  <option value="Oleic">Oleic (O)</option>
+                  <option value="Palmitic">Palmitic (P)</option>
+                  <option value="Palmitoleic">Palmitoleic (T)</option>
+                  <option value="Stearic">Stearic (S)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- polymorphism input -->
+
+            <div class="form-group shiny-input-container">
+              <label class="control-label" for="polym">Polymorphism</label>
+              <div>
+                <select id="polym">
+                  <option value="" selected disabled>Select an option</option>
+                  <option value="alpha">alpha</option>
+                  <option value="beta prime">beta prime</option>
+                  <option value="beta">beta</option>
+                </select>
+              </div>
+            </div>
+
+            <p>
+              &copy 2017-2023
+              <a href="http://www.crcfoodandhealth.com/" target="_blank"
+                >Marangoni Research Lab</a
+              >
+              at the University of Guelph.
+            </p>
+            <br />
+            <div style="color: black; font-size: 8pt">
+              <strong>Contributors:</strong>
+              <br />
+              <br />
+              Arun S. Moorthy (University of Guelph)
+              <br />
+              Gianfranco Mazzantti (Dalhousie University)
+              <br />
+              Alejandro G. Marangoni (University of Guelph)
+              <br />
+              Sebastian Mollejas (University of Guelph)
+              <br />
+              <br />
+              <strong>References:</strong>
+              <br />
+              <br />
+              <u>Wesdorp Method:</u>
+              <br />
+              Moorthy, A.S. et al. Estimating thermodynamic properties of pure
+              tryglyceride systems using the Triglyceride Property Calculator.
+              (2017). Journal of the American Oil Chemists' Society, 94(2),
+              187-199.
+              <em>... and references therein</em>
+              <a
+                href="http://www.crcfoodandhealth.com/downloads/asmTPC-webMathe.pdf"
+                target="_blank"
+              >
+                [MATHEMATICS SUMMARY]</a
+              >
+
+              <br />
+              <br />
+              <u>Wesdorp Method Revisted (new parameters):</u>
+              <br />
+              Seilert J, Moorthy AS, Kearsley AJ, Floter E. Revisiting a model
+              to predict pure triglyceride thermodynamic properties: parameter
+              optimization and performance. J Am Oil Chem Soc. 2021;98: 837-850.
+              <a href="https://doi.org/10.1002/aocs.12515">
+                [https://doi.org/10.1002/aocs.12515]</a
+              >
+
+              <br />
+              <br />
+              <u>About Group Contribution (GC) Method:</u>
+              <br />
+              Zeberg-Mikkelsen. et al. Predicting the melting points and
+              enthalpies of fusion of saturated triglycerides by a group
+              contribution method. (1999). Fluid Phase Equilibria, 162(1), 7-17.
+              <br />
+              <br />
+              Download summarized of parameters and equations.
+              <a href="/docs/Figure2Params.pdf" target="_blank" download
+                >[HERE]</a
+              >
+              <br />
+              <br />
+
+              <span style="font-size: 8pt">
+                DISCLAIMER: <br />
+                The Triglyceride Property Calculator (TPC) and underlying
+                experimental data collection is a continual project. The authors
+                of the TPC cannot guarantee the accuracy of results generated
+                using the TPC, and cannot validate claims of others based on
+                results generated using the TPC. We encourage users to
+                communicate known issues with the calculator and validate their
+                findings with additional simulation and experiments.
+              </span>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-8">
+          <h4 style="color: black">
+            Summary of triglyceride physical and melting properties
+          </h4>
+          <div>
+            <p style="border: 5px solid blue"></p>
+            <div id="Results" class="shiny-html-output">
+              <table
+                class="table shiny-table table- spacing-s"
+                style="width: auto"
+              >
+                <thead>
+                  <tr>
+                    <td>Reference ID:</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Molecular Formula:</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Molecular Mass[g/mol]:</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Enthalpy[kJ/mol]:</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Temperature[deg.C]:</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <style type="text/css">
+              #Results table td {
+                background-color: #ffffff;
+                border-style: none;
+              }
+            </style>
+          </div>
+          <br />
+          <div style="color: blue; font-size: 12pt">
+            <div id="Results2" class="shiny-html-output">
+              <table
+                class="table shiny-table table- spacing-s"
+                style="width: auto"
+              >
+                <h4 class="param-headings">Original parmeters</h4>
+                <thead>
+                  <tr>
+                    <th style="text-align: left"></th>
+                    <th style="text-align: left">Wesdorp-Moorthy [a]</th>
+                    <th style="text-align: left">Wesdorp-Moorthy [b]</th>
+                    <th>GC Method</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Predicted Enthalpy [kJ/mol]</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Predicted Temperature [deg. Celsius]</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="Results3" class="shiny-html-output">
+              <table
+                class="table shiny-table table- spacing-s"
+                style="width: auto"
+              >
+                <h4 class="param-headings">Updated parameters</h4>
+                <h5 class="param-headings">
+                  Please read paper linked for more context on the performance
+                  of the parameters on specific TAGs.
+                </h5>
+                <thead>
+                  <tr>
+                    <th style="text-align: left"></th>
+                    <th style="text-align: left">Wesdorp-Moorthy [a]</th>
+                    <th style="text-align: left">Wesdorp-Moorthy [b]</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Predicted Enthalpy [kJ/mol]</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Predicted Temperature [deg. Celsius]</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <style type="text/css">
+                #Results table td {
+                  background-color: #c2dfff;
+                  border-style: none;
+                }
+              </style>
+
+              <h4 class="param-headings">Batch file</h4>
+              <p class="param-headings">
+                To enter multiple TAGs and compute them simultaneously download
+                the following .csv file, fill in the sheet and upload it.
+                <a href="batch/default_batch.csv" download
+                  >Download Batch reference</a
+                >
+              </p>
+
+              <!-- form for batch feature -->
+
+              <form
+                action="/upload_batch"
+                enctype="multipart/form-data"
+                id="upload-form"
+                method="post"
+              >
+                <label for="file-upload" class="custom-file-upload">
+                  <i class="fa fa-cloud-upload"></i> Upload batch file
+                </label>
+                <input
+                  id="file-upload"
+                  type="file"
+                  style="display: none"
+                  name="file"
+                />
+                <span id="file-name" style="margin-left: 10px"
+                  >No file selected.</span
+                >
+                <br />
+
+                <div class="submit-container">
+                  <button type="submit">Submit</button>
+
+                  <!-- Element to display the response message -->
+                  <div id="response-message"></div>
+                  <a href="#" id="download-button" style="display: none"
+                    >Download File</a
+                  >
+                </div>
+              </form>
+
+              <br />
+
+              <h4 class="param-headings">SFC Calculator</h4>
+              <p class="param-headings">
+                To use the SFC calculator, download the following .csv file,
+                fill in the sheet and upload it.
+                <a href="sfc_data/default_sfc.csv" download
+                  >Download SFC reference</a
+                >
+              </p>
+
+              <!-- form for SFC feature -->
+
+              <form
+                action="/upload_sfc"
+                enctype="multipart/form-data"
+                id="upload-sfc"
+                method="post"
+              >
+                <label for="file-upload-sfc" class="custom-file-upload">
+                  <i class="fa fa-cloud-upload"></i> Upload SFC file
+                </label>
+                <input
+                  id="file-upload-sfc"
+                  type="file"
+                  style="display: none"
+                  name="file"
+                />
+                <span id="file-name-sfc" style="margin-left: 10px"
+                  >No file selected.</span
+                >
+                <br />
+
+                <div class="submit-container">
+                  <button type="submit">Submit</button>
+
+                  <!-- Element to display the response message -->
+                  <div id="response-message-sfc"></div>
+                  <a href="#" id="download-button-sfc" style="display: none"
+                    >Download File</a
+                  >
+                </div>
+              </form>
+
+              <br />
+              <p>
+                Prediction [a] generated using combined temperature and enthalpy
+                data. Prediction [b] generated using only temperature data. Both
+                model fits described in linked summary document.
+              </p>
+            </div>
+            <p style="border: 5px solid blue"></p>
+            <div style="color: black; font-size: 12pt">
+              <p>
+                <!-- DISCLAIMER: The Triglyceride Property Calculator (TPC) and underlying experimental data collection is a continual project. 
+                The authors of the TPC cannot guarantee the accuracy of results generated using the TPC, and cannot validate claims of others based on results generated using the TPC. 
+                We encourage users to communicate known issues with the calculator and validate their findings with additional simulation and experiments. -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
