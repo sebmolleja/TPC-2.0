@@ -13,7 +13,7 @@ This project is a Triglyceride Property Calculator written in Python, developed 
 1. **Prerequisites:** Ensure you have the latest version of Python installed (3.11 or newer). You can download it from [here](https://www.python.org/downloads/).
 
 2. **Setup:**
-   - Download the project files and navigate to the `TPC_Python` folder.
+   - Download the project files and navigate to the `TPC-2.0-main` folder.
    
 3. **Running the Server:**
    - Open a terminal or command prompt in the project directory.
