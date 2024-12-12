@@ -98,7 +98,7 @@ def unsat_temp_params(type, parseCol):
 
     if type == "reference":
         aO = unsat_temp_vars.iloc[0, parseCol]
-        aD = unsat_temp_vars.iloc[1, parseCol]
+        aE = unsat_temp_vars.iloc[1, parseCol]
         aJ = unsat_temp_vars.iloc[2, parseCol]
         aN = unsat_temp_vars.iloc[3, parseCol]
 
@@ -117,7 +117,7 @@ def unsat_temp_params(type, parseCol):
 
     elif type == "P1L":
         aO = unsat_temp_vars_P1L.iloc[0, parseCol]
-        aD = unsat_temp_vars_P1L.iloc[1, parseCol]
+        aE = unsat_temp_vars_P1L.iloc[1, parseCol]
         aJ = unsat_temp_vars_P1L.iloc[2, parseCol]
         aN = unsat_temp_vars_P1L.iloc[3, parseCol]
 
@@ -134,4 +134,4 @@ def unsat_temp_params(type, parseCol):
         bJ = unsat_temp_vars_P1L.iloc[12, parseCol]
         bN = unsat_temp_vars_P1L.iloc[13, parseCol]
 
-    return aO, aD, aJ, aN, aOO, aDD, aJJ, aNN, aOJ, aON, aJN, bO, bJ, bN
+    return aO, aE, aJ, aN, aOO, aDD, aJJ, aNN, aOJ, aON, aJN, bO, bJ, bN
